@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     // Declare view properties - the first one is done for you
     lateinit var displayTextView: TextView
     lateinit var clickMeButton : Button
-    lateinit var nameEditText : TextView
+    lateinit var nameEditText : EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,7 +22,11 @@ class MainActivity : AppCompatActivity() {
         nameEditText = findViewById(R.id.nameEditText)
         
         // Respond to button click event per specifications
+        clickMeButton.setOnClickListener {
+            val txt = "Hello, " + nameEditText.text.toString()
+            displayTextView.text=txt
 
+        }
 
     }
 }
